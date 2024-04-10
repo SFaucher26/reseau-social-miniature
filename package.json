@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.5",
+    "session": "^0.1.0"
+  },
+  "name": "reseau-social-miniature",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SFaucher26/reseau-social-miniature.git"
+  },
+  "keywords": [],
+  "author": "sandrine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SFaucher26/reseau-social-miniature/issues"
+  },
+  "homepage": "https://github.com/SFaucher26/reseau-social-miniature#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
