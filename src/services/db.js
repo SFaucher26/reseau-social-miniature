@@ -1,3 +1,4 @@
+
 import pg from 'pg';
 
 // services / db.js
@@ -10,3 +11,12 @@ const pool = new pg.Pool({
 })
 
 export default pool
+
+
+
+
+
+
+
+
+

@@ -13,16 +13,15 @@
     <!-- lien css  -->
     <link rel="stylesheet" href="style.css" />
     <title>login</title>
-    <script defer src="./js/login.js"></script>
   </head>
   <body class="bg-info-subtle">
-    <h1 class="text-center p-5">SE CONNECTER</h1>
+    <h1 class="text-center p-5">S'ENREGISTRER</h1>
 
     <!--formulaire de log-->
     <div class="container-fluid mt-5 p-2">
       <div class="row d-flex justify-content-around p-5">
         <div class="col-lg-3 m-4 p-3 text-center bg-primary-subtle">
-          <form action="/login" method="post">
+          <form action="/users" method="post">
             <div class="form-floating pb-2">
               <input
                 type="text"
@@ -32,6 +31,16 @@
                 placeholder="Username"
               />
               <label for="floatingInput">Pseudo</label>
+            </div>
+            <div class="form-floating pb-2">
+              <input
+                type="email"
+                class="form-control text-center"
+                name="email"
+                id="floatingInput"
+                placeholder="email"
+              />
+              <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating pb-2">
               <input

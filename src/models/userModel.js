@@ -1,8 +1,10 @@
 // models/User.js
 import db from '../services/db.js'
 
+
 export default class User {
   constructor(username, email, password) {
+    
     this.username = username
     this.email = email
     this.password = password
@@ -23,12 +25,13 @@ export default class User {
   static async findByUsernameAndPassword(username, password) {
     const client = await db.connect()
     try{
-    const queryText = 'SELECT username, password FROM users'
+      //LOWER pour que ce ne soit pas sensible à la casse 
+    const queryText = 'SELECT * FROM users WHERE LOWER(username) = LOWER($1) and password = $2'
     const values = [username, password]
     const result = await client.query(queryText, values)
     return result.rows[0]
     }finally{
-        clilent.release()
+        client.release()
     }
   }
      

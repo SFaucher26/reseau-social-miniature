@@ -40,7 +40,9 @@ if(user){
 
     // redirige le sur sur la home page
     document.location.href = '/';
-} 
+} else{
+    document.location.href = '/register.html'
+}
 
 
 })
