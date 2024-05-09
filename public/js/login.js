@@ -38,7 +38,7 @@ if(user){
     //valable en fonction du navigateur
     // localStorage.setItem('user', user.id)
 
-    // redirige le sur sur la home page
+    // redirige sur la home page
     document.location.href = '/';
 } else{
     document.location.href = '/register.html'

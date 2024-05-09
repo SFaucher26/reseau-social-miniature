@@ -1,37 +1,32 @@
-window.addEventListener('DOMContentLoaded', async () => {
-    const mainEl = document.querySelector('main')
+window.addEventListener("DOMContentLoaded", async () => {
+  const mainEl = document.querySelector("main");
+  mainEl.innerText = "";
 
-    const token = sessionStorage.getItem('token')
-    // if(!token) {
-    //     document.location.href = '/login.html'
-    //     return
-    // }
-    if(token){
-        
-    
+  const token = sessionStorage.getItem("token");
+  // if(!token) {
+  //     document.location.href = '/login.html'
+  //     return
+  // }
+  if (token) {
     const user = await fetch(`/users/current`, {
-        headers: {
-            'Authorization': `${token}`
-        }
+      headers: {
+        Authorization: `${token}`,
+      },
     })
-        .then(async response => {
-            if(response.ok){
-                return response.json()
-            }
-            throw await response.json()
-        })
-        .catch(error => {
-            mainEl.innerText = error.message
-        })
+      .then(async (response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw await response.json();
+      })
+      .catch((error) => {
+        mainEl.innerText = error.message;
+      });
 
-    if(user) {
-        mainEl.innerText = 'Bonjour ' + user.username
+    if (user) {
+      mainEl.innerText = "Bonjour " + user.username;
     }
-} else {
-    // rajoute bouton de connexion qui va vers la page login
-   
+  }
 
-}
-
-// lister mes posts
-})
+  const post = await fetch("/posts");
+});

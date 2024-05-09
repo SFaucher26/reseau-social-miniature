@@ -23,24 +23,21 @@ export function getCurrentUser(req, res) {
 export async function createUser(req, res) {
   const { username, email, password } = req.body;
 
+  
+try {
   if (!username || !email || !password) {
-    return res.status(500).send("Invalid input");
+    return res.status(500).send({ message: "Invalid input"});
   }
 
   const newUser = new User(username, email, password);
-  const saveUser = await newUser.save().catch((error) => {
-    res.status(500).send(
-      `User already exist.
-        <script>
-          setTimeout(()=>{
-            document.location.href = '/register.html'
-          }, 3000)
-        </script>
-        `
-    );
+  const saveUser = await newUser.save()
+    return res.status(200).send({ message: "user created"})
+  
+  
+} catch (error) {
+  res.status(500).json({ error: "User already exist" })
     console.error(error);
-  });
-  if (saveUser) {
-    res.redirect(201, "login.html");
-  }
 }
+}
+
+
